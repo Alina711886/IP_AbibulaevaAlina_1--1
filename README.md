@@ -1,1 +1,1 @@
-https://github.com/Alina711886/IP_AbibulaevaAlina_1--1# IP_AbibulaevaAlina_1--1
+# IP_AbibulaevaAlina_1--1
