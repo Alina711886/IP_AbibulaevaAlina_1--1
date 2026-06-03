@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея - Секреты комнатных растений</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="gallery-header">
+        <h1><i class="fas fa-images"></i> Фотогалерея</h1>
+        <nav class="main-nav">
+            <ul class="nav-grid">
+                <li><a href="index.html" class="nav-link"><i class="fas fa-home"></i> Главная</a></li>
+                <li><a href="gallery.html" class="nav-link active"><i class="fas fa-camera"></i> Галерея</a></li>
+               <li><a href="contacts.html" class="nav-link"><i class="fas fa-info-circle"></i> Контакты</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="gallery-container">
+        <div class="controls-panel">
+            <div class="stats">
+                <span class="stat-item">
+                    <i class="fas fa-image"></i>
+                    Изображений: <span id="image-counter">0</span>
+                </span>
+                <span class="stat-item">
+                    <i class="fas fa-heart"></i>
+                    Всего лайков: <span id="total-likes">0</span>
+                </span>
+            </div>
+            <div class="view-controls">
+                <button id="grid-view" class="view-btn active"><i class="fas fa-th"></i> Сетка</button>
+                <button id="list-view" class="view-btn"><i class="fas fa-list"></i> Список</button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <h3><i class="fas fa-filter"></i> Фильтры:</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="flowering">Цветущие</button>
+                <button class="filter-btn" data-filter="foliage">Декоративно-лиственные</button>
+                <button class="filter-btn" data-filter="succulents">Суккуленты</button>
+            </div>
+        </div>
+
+        <!-- ГАЛЕРЕЯ С ИСПОЛЬЗОВАНИЕМ CSS GRID -->
+        <div class="gallery-grid" id="image-gallery">
+            <!-- Карточка 1 -->
+            <article class="image-card" data-category="foliage">
+                <div class="card-image">
+                    <img src="images/monstera.jpg" 
+                    alt="Монстера деликатеса с крупными резными листьями" 
+                    class="gallery-img" 
+                    loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="1"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Монстера Деликатеса</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 10 апреля 2026</p>
+                    <p class="image-description">Тропическая лиана с эффектными рассечёнными листьями. Любит рассеянный свет и регулярное опрыскивание.</p>
+                    <div class="image-tags"><span class="tag">тропики</span><span class="tag">лианы</span></div>
+                </div>
+            </article>
+
+            <!-- Карточка 2 -->
+            <article class="image-card" data-category="flowering">
+                <div class="card-image">
+                    <img src="images/orchid.jpg" 
+                    alt="Белая орхидея фаленопсис в керамическом горшке" 
+                    class="gallery-img" 
+                    loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="2"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Орхидея Фаленопсис</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 10 апреля 2026</p>
+                    <p class="image-description">Эпифитное растение с долгим периодом цветения. Требует прозрачного горшка и полива методом погружения.</p>
+                    <div class="image-tags"><span class="tag">цветение</span><span class="tag">эпифиты</span></div>
+                </div>
+            </article>
+
+            <!-- Карточка 3 -->
+            <article class="image-card" data-category="succulents">
+                <div class="card-image">
+                    <img src="images/aloe.jpg" 
+                    alt="Алоэ вера с мясистыми зелёными листьями" 
+                    class="gallery-img" 
+                    loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="3"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Алоэ Вера</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 10 апреля 2026</p>
+                    <p class="image-description">Лекарственное растение-суккулент. Засухоустойчиво, предпочитает яркий свет и редкий полив.</p>
+                    <div class="image-tags"><span class="tag">лечение</span><span class="tag">суккуленты</span></div>
+                </div>
+            </article>
+
+            <!-- Карточка 4 -->
+            <article class="image-card" data-category="foliage">
+                <div class="card-image">
+                    <img src="images/ficus.jpg" 
+                    alt="Фикус эластика с тёмно-зелёными кожистыми листьями" 
+                    class="gallery-img" 
+                    loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="4"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Фикус Эластика</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 10 апреля 2026</p>
+                    <p class="image-description">Неприхотливое дерево с глянцевой листвой. Отлично очищает воздух и быстро растёт при хорошем освещении.</p>
+                    <div class="image-tags"><span class="tag">дерево</span><span class="tag">воздух</span></div>
+                </div>
+            </article>
+
+            <!-- Карточка 5 -->
+            <article class="image-card" data-category="foliage">
+                <div class="card-image">
+                    <img src="images/sansevieria.jpg" 
+                    alt="Сансевиерия с вертикальными полосатыми листьями" 
+                    class="gallery-img" 
+                    loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="5"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Сансевиерия</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 10 апреля 2026</p>
+                    <p class="image-description">«Тёщин язык» — чемпион по выживанию. Выносит тень, сухой воздух и забывчивый полив.</p>
+                    <div class="image-tags"><span class="tag">неприхотливое</span><span class="tag">офис</span></div>
+                </div>
+            </article>
+
+            <!-- Карточка 6 -->
+            <article class="image-card" data-category="succulents">
+                <div class="card-image">
+                    <img src="images/cactus.jpg" 
+                    alt="Композиция из разных кактусов в керамических горшках" 
+                    class="gallery-img" 
+                    loading="lazy">
+                    <div class="image-overlay">
+                        <button class="like-btn" data-id="6"><i class="far fa-heart"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <h3 class="image-title">Коллекция кактусов</h3>
+                    <p class="image-date"><i class="far fa-calendar"></i> 10 апреля 2026</p>
+                    <p class="image-description">Разнообразие форм и колючек. Идеальны для южных окон и минималистичных интерьеров.</p>
+                    <div class="image-tags"><span class="tag">пустыня</span><span class="tag">форма</span></div>
+                </div>
+            </article>
+        </div>
+
+        <aside class="gallery-info">
+            <h3><i class="fas fa-lightbulb"></i> Интересный факт</h3>
+            <p>Комнатные растения повышают влажность воздуха на 10-15% и снижают концентрацию формальдегида и бензола, выделяемых мебелью и красками.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="current-year">2026</span> Абибулаева Алина. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- ПОДКЛЮЧЕНИЕ JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
